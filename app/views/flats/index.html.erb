@@ -1,0 +1,27 @@
+<nav class="navbar navbar-light bg-light justify-content-between">
+  <a class="navbar-brand">Simple Airbnb</a>
+  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Add a flat</button>
+</nav>
+
+<h1>All of our flats (<%= @flats.count %>)</h1>
+<div class="card-list">
+  <% @flats.each do|flat| %>
+    <div class="card" style="width: 300px;">
+        <div class="card-body">
+          <h5 class="card-title"><%= flat.name%></h5>
+          <p class="card-text"><%=flat.address %></p>
+
+          <div class="card-info">
+            <p class="card-text"><i class="fas fa-dollar-sign"></i> <%=flat.number_of_guests %></p>
+            <p class="card-text"><i class="fas fa-users"></i> <%=flat.price_per_night %></p>
+          </div>
+        </div>
+
+      <div class="card-footer">
+          <a href="#">More info</a>
+      </div>
+
+    </div>
+  <% end %>
+</div>
+
